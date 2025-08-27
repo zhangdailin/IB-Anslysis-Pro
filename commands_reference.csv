@@ -1,0 +1,14 @@
+category,command,arguments,options,description
+General,iba operations,,,List available operations
+General,iba version,,,Show version information
+General,iba interactive,[DIR_A] [DIR_B],,Start interactive session
+Analyze,iba analyze xmit,<DIRECTORY>,"--overview|--check|--format {stdout,csv,html,json}|--output FILE|--lines N|--sort COL|--extend COLS|--plot|--similar COL|--filter-mode {column,guid,smart}|--filter PARAMS|--verbose|-v|--quiet|-q",Xmit and wait time analysis from PM data
+Analyze,iba analyze cable,<DIRECTORY>,"--overview|--check|--format {stdout,csv}|--output FILE|--lines N|--sort COL|--extend COLS",Cable and port info; check includes Optical Module Temperature High (>= 70C)
+Analyze,iba analyze port,<DIRECTORY>,"--overview|--check|--format {stdout,csv}|--output FILE|--lines N|--sort COL|--extend pairs",Port statistics; paired view default in --check; filter rows where both Link Downed Counters > 0
+Analyze,iba analyze topo,<DIRECTORY>,"--overview|--check|--format {stdout,csv,html}|--output FILE",Topology overview or anomalies; HTML visualization supported
+Analyze,iba analyze ber,<DIRECTORY>,"--overview|--check|--format {stdout,csv,json}|--output FILE",Bit Error Rate analysis
+Analyze,iba analyze hca,<DIRECTORY>,"--overview|--format {stdout,csv,json}|--output FILE",Host Channel Adapter info
+Analyze,iba analyze pminfo,<DIRECTORY>,"--overview|--format {stdout,csv}|--output FILE",Performance Manager info
+Analyze,iba analyze cc,<DIRECTORY>,"--overview|--format {stdout,csv}|--output FILE",Congestion control (if counters available)
+Analyze,iba analyze brief,<DIRECTORY>,"--overview|--check|--format {stdout,csv}|--output FILE",Brief summary across modules
+Common Options,(applies to analyze),,"--format {stdout,csv,html,json}; --output FILE; --lines N; --sort COL; --extend COLS; --overview; --check; --plot; --similar COL; --filter-mode {column,guid,smart}; --filter PARAMS; --verbose|-v; --quiet|-q",Options shared by analyze subcommands

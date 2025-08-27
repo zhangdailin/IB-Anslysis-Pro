@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ib-analysis"
+description = "Modern toolkit for analyzing InfiniBand network diagnostics"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "NVIDIA Corporation" }]
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools.dynamic]
+version = { attr = "ib_analysis.version.__version__" }
+dependencies = { file = "requirements.txt" }
+
+[project.scripts]
+iba = "ib_analysis.cli:cli_main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*", "build*", "dist*"]
+
+[tool.setuptools.package-data]
+ib_analysis = ["py.typed"]
+
+
